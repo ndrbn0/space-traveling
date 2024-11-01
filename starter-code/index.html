@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Tourism</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="tab-titles">
+          <li class="tab-links" onclick="toggleVisibility('home-container')">
+            00 Home
+          </li>
+          <li
+            class="tab-links"
+            onclick="toggleVisibility('destination-container')"
+          >
+            01 Destinations
+          </li>
+          <li class="tab-links" onclick="toggleVisibility('crew-container')">
+            02 Crew
+          </li>
+          <li
+            class="tab-links"
+            onclick="toggleVisibility('technology-container')"
+          >
+            03 Technology
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div id="home-container" class="tab-contents"></div>
+      <div
+        id="destination-container"
+        class="tab-contents"
+        style="display: none"
+      ></div>
+      <div id="crew-container" class="tab-contents" style="display: none"></div>
+      <div
+        id="technology-container"
+        class="tab-contents"
+        style="display: none"
+      ></div>
+    </main>
+
+    <footer>
+      <p>© 2024 Space Tourism</p>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background images */
+body {
+  background-image: url("/starter-code/assets/home/background-home-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body.destinations-active {
+  background-image: url("/starter-code/assets/destination/background-destination-desktop.jpg");
+}
+
+body.crew-active {
+  background-image: url("/starter-code/assets/crew/background-crew-desktop.jpg");
+}
+
+body.technology-active {
+  background-image: url("/starter-code/assets/technology/background-technology-desktop.jpg");
+}
+
+/* Responsive Backgrounds */
+@media (max-width: 1024px) {
+  body.destinations-active {
+    background-image: url("/starter-code/assets/destination/background-destination-tablet.jpg");
+  }
+  body.crew-active {
+    background-image: url("/starter-code/assets/crew/background-crew-tablet.jpg");
+  }
+  body.technology-active {
+    background-image: url("/starter-code/assets/technology/background-technology-tablet.jpg");
+  }
+}
+
+@media (max-width: 600px) {
+  body.destinations-active {
+    background-image: url("/starter-code/assets/destination/background-destination-mobile.jpg");
+  }
+  body.crew-active {
+    background-image: url("/starter-code/assets/crew/background-crew-mobile.jpg");
+  }
+  body.technology-active {
+    background-image: url("/starter-code/assets/technology/background-technology-mobile.jpg");
+  }
+}
+
+/* Header and Navbar */
+header {
+  width: 100%;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  gap: 10px; /* Reduced gap between navigation items */
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px); /* Blur effect */
+  height: 80px;
+  position: fixed;
+  top: 20px;
+  right: 0;
+  width: 60%;
+  max-width: 1200px;
+  align-items: center;
+}
+
+.tab-titles {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%; /* Adjusted to move the ul a bit to the left */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tab-links {
+  cursor: pointer;
+  padding: 12px 30px;
+  border-radius: 5px;
+  transition: color 0.3s;
+  text-align: center;
+  font-size: 14px;
+  color: #ffffff;
+  margin-left: 15px;
+  position: relative;
+}
+
+.active-link::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+}
+
+.tab-links:hover {
+  color: #ccc;
+}
+
+/* Main Section */
+main {
+  flex: 1;
+  padding: 20px;
+  margin-top: 150px; /* Increased margin for more space from the top */
+}
+
+.home-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 15px 0;
+  transition: transform 0.3s;
+}
+
+.home-image:hover {
+  transform: scale(1.05);
+}
+
+.explore-button {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.explore-button:hover {
+  background-color: #ccc;
+}
+
+/* Cards */
+.destination-card,
+.crew-card,
+.technology-card {
+  margin: 20px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+.destination-card:hover,
+.crew-card:hover,
+.technology-card:hover {
+  transform: scale(1.05);
+}
+
+.destination-image,
+.crew-image,
+.technology-image {
+  width: 100%; /* Responsive images */
+  max-width: 300px; /* Limit image size */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.destination-info,
+.crew-info,
+.technology-info {
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+    bottom: 0;
+    top: auto;
+    padding: 10px;
+  }
+
+  .tab-links {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-left: 0;
+  }
+
+  main {
+    margin-top: 0;
+    margin-bottom: 60px;
+  }
+
+  .destination-card,
+  .crew-card,
+  .technology-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .destination-image,
+  .crew-image,
+  .technology-image {
+    width: 80%;
+  }
+}
