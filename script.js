@@ -11,10 +11,26 @@ async function loadData() {
 function displayHome() {
   const homeContainer = document.getElementById("home-container");
   homeContainer.innerHTML = `
-      <h1>Welcome to Space Tourism</h1>
-      <p>Explore the universe with our exclusive space tourism packages.</p>
-      
+      <p>So, you want to travel to,</p>
+      <h1>Space</h1>
+      <p>Let's face it; if you want to go to space, you might as well
+      genuinely go to outer space and not hover kind of the edge of it.
+      Well, sit back and relax because we'll give you a truly out of this world experience.</p>
   `;
+
+  // Create the Explore button
+  const exploreButton = document.createElement("button");
+  exploreButton.classList.add("explore-button");
+  exploreButton.textContent = "Explore";
+
+  // Add the button to the home container
+  homeContainer.appendChild(exploreButton);
+
+  // Optional: Add an event listener for button click
+  exploreButton.addEventListener("click", () => {
+    // Add your logic for the explore button click here
+    console.log("Explore button clicked!");
+  });
 }
 
 function displayDestinations(destinations) {
